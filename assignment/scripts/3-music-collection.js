@@ -53,6 +53,8 @@ console.log(findByArtist('Beyoncé'));
 
 console.log(findByArtist('Justin Timberlake'));
 
+function search
+
 
 
 
