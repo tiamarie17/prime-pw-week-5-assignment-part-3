@@ -43,3 +43,8 @@ function showCollection(array){
    }
 }
 showCollection(collection);
+
+function findByArtist(artist){
+    let artistArray = [''];
+
+}
