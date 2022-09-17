@@ -2,6 +2,7 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 let addedMusic;
+ 
 
 function addToCollection(title, artist, yearPublished){
     
@@ -33,3 +34,12 @@ addToCollection('She Wolf', 'Shakira', 2009);
 console.log(addedMusic);
 
 console.log(collection);
+
+
+function showCollection(array){
+   console.log(array.length);
+   for (let i = 0; i < array.length; i++){
+      let result = title + 'by' + artist + 'published in' + yearPublished;
+   }
+   console.log(result);
+}
