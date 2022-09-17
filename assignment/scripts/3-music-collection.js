@@ -12,23 +12,17 @@ function addToCollection(title, artist, yearPublished){
     return addedMusic; 
 }
 
-let result = addToCollection('Strawberry Fields', 'The Beatles', 1968);
-console.log(result);
+console.log(addToCollection('Strawberry Fields', 'The Beatles', 1968));
 
-addToCollection('Oops I did it again', 'Britney Spears', 2000);
-console.log(result);
+console.log(addToCollection('Oops I did it again', 'Britney Spears', 2000));
 
-addToCollection('Lemonade', 'Beyoncé', 2016);
-console.log(result);
+console.log(addToCollection('Lemonade', 'Beyoncé', 2016));
 
-addToCollection('Beyoncé', 'Beyoncé', 2013);
-console.log(result);
+console.log(addToCollection('Beyoncé', 'Beyoncé', 2013));
 
-addToCollection('Let it Be', 'The Beatles', 1970);
-console.log(result);
+console.log(addToCollection('Let it Be', 'The Beatles', 1970));
 
-addToCollection('She Wolf', 'Shakira', 2009);
-console.log(result);
+console.log(addToCollection('She Wolf', 'Shakira', 2009));
 
 console.log(collection);
 
@@ -44,7 +38,21 @@ function showCollection(array){
 }
 showCollection(collection);
 
-function findByArtist(artist){
-    let artistArray = [''];
 
+function findByArtist(artist){
+    let artistArray = [];
+    for(let i=0; i < collection.length; i++){
+        let find = collection[i];
+        if (find.artist == artist){
+            artistArray.push(find);
+        }
+    }
+    return artistArray;  
 }
+console.log(findByArtist('Beyoncé'));
+
+console.log(findByArtist('Justin Timberlake'));
+
+
+
+
