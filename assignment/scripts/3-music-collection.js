@@ -53,8 +53,55 @@ console.log(findByArtist('Beyoncé'));
 
 console.log(findByArtist('Justin Timberlake'));
 
-function search
 
 
 
+function search (criteria){
+    function isEmpty(criteria){
+       return Object.keys(criteria).length === 0;  
+    } 
+    if(criteria == null || isEmpty(criteria)){
+        return collection;
+    } 
+    else { 
+        let newArray = [];
+        for(i=0; i<collection.length; i++){
+            let res = collection[i];
+            if(res.artist == criteria.artist && res.yearPublished == criteria.year){
+                newArray.push(res);
+            }
+        }
+        return newArray;
+    } 
+}
 
+//input object that is not a match
+let mySearch = {artist: 'Ray Charles', year: 1957};    
+let res2 = search(mySearch);
+console.log(res2);
+//returns empty array
+
+
+//input object that is a match
+let mySearch2 = {artist: 'Britney Spears', year: 2000};
+let res3 = search(mySearch2);
+console.log(res3);
+//returns one Britney Spears object from collection array
+
+
+//input object that is undefined
+let mySearch3;
+let res4 = search(mySearch3);
+console.log(res4);
+//returns all the albums in collection
+
+
+//input does not include an object
+let res5 = search();
+console.log(res5);
+// returns all the albums in collection
+
+//input is an empty object
+let res7 = search({});
+console.log(res7);
+//returns all the albums in collection
