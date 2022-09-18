@@ -139,7 +139,6 @@ console.log(findByArtist('Justin Timberlake'));
 
 
 //Creating search function
-//Assuming the artist, year, and any one of the trackNames matches the criteria:
 
 function search (criteria){
     function isEmpty(criteria){
@@ -149,15 +148,15 @@ function search (criteria){
         return collection;
     } 
     else { 
+        let newArray = []
         for(i=0; i<collection.length; i++){
-            let newArray = []
             let res = collection[i];
-               for (let item of res.tracks){
-                item = res.tracks[i];
-            if(res.artist == criteria.artist && res.yearPublished == criteria.year){
+              if(res.artist == criteria.artist && res.yearPublished == criteria.year){
                 newArray.push(res);
-            } else if (item == criteria.trackName) {
-                newArray.push(item);
+            } for (let item of res.tracks){
+                item = res.tracks[i];
+                    if (item == criteria.trackName) {
+                        newArray.push(item);
             }
         }
        return newArray; 
@@ -173,7 +172,7 @@ console.log(res2);
 //returns empty array
 
 
-//input object that is a match based on artist, year, and trackName
+//input object that is a match based on artist and year
 let mySearch2 = {artist: 'Shakira', year: 2009, trackName: 'Loca'};
 let res3 = search(mySearch2);
 console.log(res3);
